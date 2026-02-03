@@ -1,0 +1,302 @@
+<html>
+  <head>
+    <title>list of perfumes and prices</title>
+    <link rel="stylesheet" href="HOME.HTML">
+  </head>
+<style>
+table, th, td, tr {
+   border:1px solid black;
+  line-height: 1.8;
+  padding: 12px 14px;
+  font-weight: 550;
+}
+th {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+table td:last-child,
+table th:last-child{
+  text-align: right;
+}
+
+
+.hint{
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+.order{
+  display: block;
+  margin: 25px auto;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #25D366;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3 ease, transform 0.2s ease;
+  }
+  .order:hover{
+    background-color: #1ebe5d;
+    transform: translate(-2px);
+  }
+  .order:active{
+    transform: translateY(0);
+  }
+
+</style>
+
+<script> 
+function orderNow() { 
+  let selected = document.querySelectorAll('.perfume:checked'); 
+  let message = "Hello, I would like to order for the following perfumes:\n"; 
+  let total = 0; 
+  if (selected.length === 0) { alert("Please select at least one perfume"); return; }
+  
+  selected.forEach(item => { 
+    let name = item.dataset.name; 
+    let price = Number(item.dataset.price); 
+    total += price; 
+    message += `- ${name} (N${price})\n`; }); 
+    message += `\nTotal: N${total}`; 
+    let phone = "2348086628539"; 
+    let encodedMessage = encodeURIComponent(message); 
+    let url = "https:///api.whatsapp.com/send?phone=" + phone + "&text=" + encodedMessage;
+     window.open (url, "_blank");
+  }
+    </script>
+    
+<body style="background-image: url(background2.jpeg); 
+font-family: Arial, Helvetica, sans-serif; background-size: cover; background-position: center;">
+<h1 style="text-align: center; font-weight: 600; margin-bottom: 15PX;">AVAILABLE PERFUMES</h1>
+
+<p class="hint">
+  Select one or more perfumes below, then click "Order via whatsapp" to complete your purchase.
+  </p>
+<DIV>
+<table style= "width:100%">
+  <tr>
+    <TH>SELECT</TH>
+    <th>S/N</th>
+    <th>PERFUME NAME</th>
+    <th>SIZE (ML)</th>
+    <TH>GENDER</TH>
+    <TH>PRICE</TH>
+  </tr>
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="Riggs body spray" data-price="3500">
+    </td>
+    <td>1.</td>
+    <td>RIGGS BODY SPRAY</td>
+    <td>250ML</td>
+    <td>UNISEX</td>
+    <td>3,500</td>
+  </tr>
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="Choco Musk" data-price="5000">
+    </td>
+    <td>2.</td>
+    <td>CHOCO MUSK</td>
+      <td>50ML</td>
+    <td>WOMEN</td>
+    <TD>5,000</TD>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="My Way" data-price="5000">
+    </td>
+    <td>3.</td>
+    <td>MY WAY</td>
+      <td>***</td>
+    <td>WOMEN</td>
+    <TD>5,000</TD>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="Gk Men" data-price="3000">
+    </td>
+    <td>4.</td>
+    <td>GK MEN</td>
+      <td>50ML</td>
+    <td>MEN</td>
+    <TD>3,000</TD>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="Red Diamond" data-price="4500">
+    </td>
+    <td>5.</td>
+    <td>RED DIAMOND</td>
+      <td>***</td>
+    <td>UNISEX</td>
+    <TD>4,500</TD>
+  </tr>
+
+<tr>
+  <td>
+      <input type="checkbox" class="perfume" data-name="Ka-Ly" data-price="9,000">
+    </td>
+    <td>6.</td>
+    <td>KA-LY</td>
+      <td>***</td>
+    <td>WOMEN</td>
+    <TD>9,000</TD>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="Oud Torch, Oud Vanilla, Blue TOUCH" data-price="4000">
+    </td>
+    <td>7.</td>
+    <td>OUD TORCH, OUD VANILLA, BLUE TOUCH</td>
+      <td>25ML</td>
+    <td>UNISEX</td>
+    <TD>4,000</TD>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="TEMPTATION" data-price="6000">
+    </td>
+    <td>8.</td>
+    <td>TEMPTATION</td>
+      <td>100ML</td>
+    <td>UNISEX</td>
+    <TD>6,000</TD>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="AVANTI" data-price="4500">
+    </td>
+    <td>9.</td>
+    <td>AVANTI</td>
+      <td>25ML</td>
+    <td>UNISEX</td>
+    <TD>4,500</TD>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="Genle, VALENTINHO" data-price="4500">
+    </td>
+    <td>10.</td>
+    <td>Genle, VALENTINHO</td>
+      <td>25ML</td>
+    <td>UNISEX</td>
+    <TD>4,500</TD>
+  </tr>
+
+<tr>
+  <td>
+      <input type="checkbox" class="perfume" data-name="HAYAATI" data-price="18000">
+    </td>
+    <td>11.</td>
+    <td>HAYAATI</td>
+      <td>100ML</td>
+    <td>WOMEN</td>
+    <TD>18,000</TD>
+  </tr>
+
+<tr>
+  <td>
+      <input type="checkbox" class="perfume" data-name="NOW WOMEN" data-price="23000">
+    </td>
+    <td>12.</td>
+    <td>NOW WOMEN</td>
+      <td>***</td>
+    <td>FEMALE</td>
+    <TD>23,000</TD>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="checkbox" class="perfume" data-name="YARA" data-price="30000">
+    </td>
+    <td>13.</td>
+    <td>YARA</td>
+      <td>***</td>
+    <td>WOMEN</td>
+    <TD>30,000</TD>
+  </tr>
+
+<tr>
+  <td>
+      <input type="checkbox" class="perfume" data-name="My HER" data-price="15000">
+    </td>
+    <td>14.</td>
+    <td>MY HER</td>
+      <td>100ML</td>
+    <td>WOMEN</td>
+    <TD>15,000</TD>
+  </tr>
+
+<tr>
+  <td>
+      <input type="checkbox" class="perfume" data-name="9PM" data-price="50000">
+    </td>
+    <td>15.</td>
+    <td>9PM</td>
+      <td>100ML</td>
+    <td>UNISEX</td>
+    <TD>50,000</TD>
+  </tr>
+
+<tr>
+  <td>
+      <input type="checkbox" class="perfume" data-name="STORM body spray" data-price="3500">
+    </td>
+    <td>16.</td>
+    <td>STORM BODY SPRAY</td>
+      <td>200ML</td>
+    <td>UNISEX</td>
+    <TD>3,500</TD>
+  </tr>
+
+<tr>
+  <td>
+      <input type="checkbox" class="perfume" data-name="YARA body spray" data-price="3500">
+    </td>
+    <td>16.</td>
+    <td>YARA BODY SPRAY</td>
+      <td>200ML</td>
+    <td>UNISEX</td>
+    <TD>3,500</TD>
+  </tr>
+
+<tr>
+  <td>
+      <input type="checkbox" class="perfume" data-name="KARIS body spray" data-price="4000">
+    </td>
+    <td>17.</td>
+    <td>KARIS BODY SPRAY (ALL DAY FRESH)</td>
+      <td>100ML</td>
+    <td>UNISEX</td>
+    <TD>4,000</TD>
+  </tr>
+
+
+</table>
+</DIV>
+
+<a href= "https:///api.whatsapp.com/send?phone=2348086628539" target="_blank"><button onclick="orderNow()" class="order">order via whatsApp</button></a>
+<p style="font-size: 1rem; opacity: 0.8; text-align: center;">
+  You will be redirected to whatsapp to complete your order
+  <p style="font-size: 20px; text-align: center;">Can't find the fragrance you’re looking for? 
+    kindly reach out to us on whatsApp and we'll be happy to assist with availability</p>
+  </p>
+<P style="text-align: center; margin-top: 30px; font-size: 25px; color: #555">Thank you for visiting our collection</P>
+
+
+
+</body>
+</html>
